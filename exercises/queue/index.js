@@ -7,7 +7,20 @@
 //     const q = new Queue();
 //     q.add(1);
 //     q.remove(); // returns 1;
+class Queue {
+    constructor() {
+        this.values = new Array();
+    }
 
-class Queue {}
+    add(item) {
+        this.values.push(item)
+    }
+
+    remove() {
+        const [first, ...rest] = this.values;
+        this.values = rest;
+        return first;
+    }
+}
 
 module.exports = Queue;

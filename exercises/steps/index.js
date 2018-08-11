@@ -17,6 +17,12 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+    const recursion = (liv) => {
+        console.log('#'.repeat(liv) + ' '.repeat(n - liv));
+        if (liv < n) recursion(liv + 1);
+    }
+    recursion(1);
+}
 
 module.exports = steps;

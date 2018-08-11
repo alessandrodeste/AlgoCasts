@@ -12,6 +12,19 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+    const recursion = (i) => {
+        const log = i % 5 === 0 && i % 3 === 0
+        ? 'fizzbuzz'
+        : i % 3 === 0
+        ? 'fizz'
+        : i % 5 === 0
+        ? 'buzz'
+        : i;
+        console.log(log);
+        if (i < n) recursion(i + 1);
+    }
+    recursion(1);
+}
 
 module.exports = fizzBuzz;

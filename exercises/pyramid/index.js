@@ -14,6 +14,21 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    const cycle = (level) => {
+        const sideSpaces = n - level;
+        const toPrint = 
+            ' '.repeat(sideSpaces) +
+            '#'.repeat(level === 1 ? 1 : level * 2 - 1) +
+            ' '.repeat(sideSpaces);
+        
+        console.log(toPrint);
+
+        if (level < n) {
+            cycle(level + 1)
+        }
+    }
+    cycle(1);
+}
 
 module.exports = pyramid;
